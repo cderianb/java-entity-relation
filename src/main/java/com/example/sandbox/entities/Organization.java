@@ -46,16 +46,4 @@ public class Organization {
     @OneToMany(mappedBy = "organization")
     @ToString.Exclude
     private Set<Department> departments;
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Organization)) return false;
-        return id != null && id.equals(((Organization) o).getId());
-    }
-
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
 }

@@ -50,16 +50,4 @@ public class EmployeeDetail {
     @OneToOne
     @ToString.Exclude
     private Employee employee;
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof EmployeeDetail )) return false;
-        return id != null && id.equals(((EmployeeDetail) o).getId());
-    }
-
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
 }
