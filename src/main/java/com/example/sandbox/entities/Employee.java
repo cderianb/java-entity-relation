@@ -15,9 +15,13 @@ import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -54,6 +58,14 @@ public class Employee {
         this.employeeDetails = employeeDetail;
         employeeDetail.setEmployee(this);
     }
+
+    @ManyToMany
+    @JoinTable(
+            name = "map_employees_tasks",
+            joinColumns = @JoinColumn(name = "employee_id"),
+            inverseJoinColumns = @JoinColumn(name = "task_id")
+    )
+    private Set<Task> tasks;
 
     @Override
     public boolean equals(Object o) {
