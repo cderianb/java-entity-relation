@@ -11,5 +11,6 @@ public interface DepartmentRepository extends JpaRepository<Department, Long> {
     @EntityGraph(type = EntityGraph.EntityGraphType.FETCH, attributePaths = "organization")
     List<Department> findAll();
 
+    @EntityGraph(type = EntityGraph.EntityGraphType.FETCH, attributePaths = "organization")
     Optional<Department> findByName(String name);
 }
