@@ -26,7 +26,6 @@ import javax.persistence.Table;
 @Builder
 @AllArgsConstructor
 @Entity
-@EntityListeners(AuditingEntityListener.class)
 @Table(name = EmployeeDetail.TABLE_NAME)
 public class EmployeeDetail {
     public static final String TABLE_NAME = "employee_details";

@@ -26,7 +26,6 @@ import java.util.Set;
 @Builder
 @AllArgsConstructor
 @Entity
-@EntityListeners(AuditingEntityListener.class)
 @Table(name = Organization.TABLE_NAME)
 public class Organization {
     public static final String TABLE_NAME = "organizations";
